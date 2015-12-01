@@ -2,8 +2,6 @@
 var http = require('http');
 var url = require('url');
 
-app.set('port', (process.env.PORT || 5000));
-
 //We need a function which handles requests and send response
 function handleRequest(request, response){
 	var url_parts = url.parse(request.url, true);
@@ -16,7 +14,7 @@ function handleRequest(request, response){
 var server = http.createServer(handleRequest);
 
 //Lets start our server
-server.listen(app.get('port'), function(){
+server.listen((process.env.PORT || 5000), function(){
     //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", app.get('port'));
+    console.log("Server listening on: http://localhost");
 });
