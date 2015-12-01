@@ -7,7 +7,7 @@ function handleRequest(request, response){
 	var url_parts = url.parse(request.url, true);
 	var query = url_parts.query;
 	//response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.end('Hello World'+query.name);
+    response.end('<script>alert()</script>');
 }
 
 //Create a server
